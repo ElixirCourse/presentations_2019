@@ -1,0 +1,4 @@
+theme : sky
+highlight: vs
+logo : assets/logo.png
+footnote : "Курс по Elixir, ФМИ"
