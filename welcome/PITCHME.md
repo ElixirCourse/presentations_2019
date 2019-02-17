@@ -2,7 +2,7 @@
 ## Функционално програмиране с Elixir
 
 ---
-![Image-Absolute](assets/elixir-logo.png)
+![Image-Absolute](./assets/elixir-logo.png)
 
 ---
 ### Кои сме ние?
@@ -13,10 +13,10 @@
 * Създаваме материали и код свързани с курса.   |
 
 ---
-![Image-Absolute](assets/sofia_elixir.png)
+![Image-Absolute](./assets/sofia_elixir.png)
 
 ---
-![Image-Absolute](assets/bulgaria_elixir.png)
+![Image-Absolute](./assets/bulgaria_elixir.png)
 
 ---
 ### Кои сте вие?
@@ -39,7 +39,7 @@
 * Всяка година, не, всяка седмица нова 'технология', то не може всичко я! |
 
 ---
-![Image-Absolute](assets/Haters_gonna_hate.jpg)
+![Image-Absolute](./assets/Haters_gonna_hate.jpg)
 
 ---
 ### Защо да учим Elixir?
@@ -60,7 +60,7 @@
 ---
 ### Какво е Erlang?
 
-![Image-Absolute](assets/what_is_erlang.png)
+![Image-Absolute](./assets/what_is_erlang.png)
 
 ---
 Erlang е създаден с цел: писане на телеком програми
@@ -72,16 +72,16 @@ Erlang е създаден с цел: писане на телеком прог�
 
 ---
 #### А какви проблеми имаме днес?
-![Image-Absolute](assets/internet.jpeg) |
+![Image-Absolute](./assets/internet.jpeg) |
 
 ---
-![Image-Absolute](assets/fun1.jpg)
+![Image-Absolute](./assets/fun1.jpg)
 
 ---
-![Image-Absolute](assets/fridge.jpg)
+![Image-Absolute](./assets/fridge.jpg)
 
 ---
-![Image-Absolute](assets/social_media.gif)
+![Image-Absolute](./assets/social_media.gif)
 
 ---
 Joe Armstrong (създател на Erlang) нарича Erlang "език за конкурентно-ориентирано програмиране", като се базира на няколко правила:
@@ -104,7 +104,7 @@ Joe Armstrong (създател на Erlang) нарича Erlang "език за 
 
 ---
 ### Let it CRASH!!!
-![Image-Absolute](assets/let_it_crash.jpg)
+![Image-Absolute](./assets/let_it_crash.jpg)
 
 ---
 ### Кой ползва Erlang?
@@ -131,7 +131,7 @@ Joe Armstrong (създател на Erlang) нарича Erlang "език за 
 * Споменахме ли, че е функционален език? |
 
 ---
-![Image-Absolute](assets/functional.jpeg)
+![Image-Absolute](./assets/functional.jpeg)
 
 ---
 ### Началото
@@ -141,7 +141,7 @@ Joe Armstrong (създател на Erlang) нарича Erlang "език за 
 * Бързо набира популярност сред рубистите и ерлангаджиите. |
 
 ---
-![Image-Absolute](assets/jose.jpg)
+![Image-Absolute](./assets/jose.jpg)
 
 ---
 ### Защо да учим Elixir?
@@ -157,7 +157,7 @@ Joe Armstrong (създател на Erlang) нарича Erlang "език за 
 
 ---
 ### MIX
-![Image-Absolute](assets/mix.jpg)
+![Image-Absolute](./assets/mix.jpg)
 
 ---
 ### Инструментариум
@@ -171,7 +171,7 @@ Joe Armstrong (създател на Erlang) нарича Erlang "език за 
 
 ---
 ### NOT MIX
-![Image-Absolute](assets/npm.jpeg)
+![Image-Absolute](./assets/npm.jpeg)
 
 ---
 ### Защо да учим Elixir?
@@ -182,7 +182,7 @@ Joe Armstrong (създател на Erlang) нарича Erlang "език за 
 ---
 ### Продуктивност
 
-![Image-Absolute](assets/productivity.jpg)
+![Image-Absolute](./assets/productivity.jpg)
 
 ---
 ### Езикът Elixir в няколко изречения:
@@ -238,7 +238,7 @@ end)
 ---
 #### Pipes
 
-![Image-Absolute](assets/pipes.jpg)
+![Image-Absolute](./assets/pipes.jpg)
 
 ---
 #### Функционален език:
@@ -314,7 +314,7 @@ end
 ---
 No shared state, threads and locks.
 
-![Image-Absolute](assets/suffer.jpg)
+![Image-Absolute](./assets/suffer.jpg)
 
 ---
 ### Защо Elixir?
@@ -326,7 +326,7 @@ No shared state, threads and locks.
 ---
 ### Metaprogramming
 
-![Image-Absolute](assets/metaprogramming.jpg)
+![Image-Absolute](./assets/metaprogramming.jpg)
 
 ---
 ### Metaprogramming
@@ -340,7 +340,7 @@ No shared state, threads and locks.
 
 ##### Elixir е написан на Elixir
 
-![Image-Absolute](assets/elixir_is_elixir.png)
+![Image-Absolute](./assets/elixir_is_elixir.png)
 
 ---
 ### Metaprogramming
@@ -358,7 +358,7 @@ from Post,
 
 ##### Това пък е резултат от неуспешен тест
 
-![Image-Absolute](assets/failed_test.png)
+![Image-Absolute](./assets/failed_test.png)
 
 ---
 ### Защо Elixir?
@@ -377,7 +377,7 @@ from Post,
 ---
 ### В Elixir/Erlang има бъдеще
 
-![Image-Absolute](assets/ouroboros-by-zarathus.jpg)
+![Image-Absolute](./assets/ouroboros-by-zarathus.jpg)
 
 ---
 ### Защо да учим Elixir?
@@ -391,22 +391,22 @@ from Post,
 ---
 #### Plug & Phoenix
 
-![Image-Absolute](assets/phoenix_and_plug.jpg)
+![Image-Absolute](./assets/phoenix_and_plug.jpg)
 
 ---
 #### Ecto
 
-![Image-Absolute](assets/ecto.png)
+![Image-Absolute](./assets/ecto.png)
 
 ---
 #### И още и още
 
-![Image-Absolute](assets/explore.png)
+![Image-Absolute](./assets/explore.png)
 
 ---
 #### Ще си говорим и за доста advanced неща!
 
-![Image-Absolute](assets/distribution.jpg)
+![Image-Absolute](./assets/distribution.jpg)
 
 ---
 ### Кой ползва Elixir?
@@ -434,7 +434,7 @@ from Post,
 
 ---
 ## Малко информация за курса
-![Image-Absolute](assets/Craft-Beer.jpeg)
+![Image-Absolute](./assets/Craft-Beer.jpeg)
 
 ---
 ## Добре дошли!
@@ -490,11 +490,11 @@ TODO - Слави/Отбор
 ## Ресурси
 * Имаме сайт http://elixir-lang.bg
 * Имаме Facebook група https://www.facebook.com/groups/636900123169076/
-* Имаме mail [course@elixir-lang.bg](mailto:course@elixir-lang.bg)
+* Имаме mail [course@elixir-lang.bg](./mailto:course@elixir-lang.bg)
 * Github https://github.com/ElixirCourse
 * Discord https://discord.gg/EZx7y67
 
 
 ---
 ## Край
-![Image-Absolute](assets/gimpy.jpg)
+![Image-Absolute](./assets/gimpy.jpg)
