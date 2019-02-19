@@ -359,7 +359,7 @@ from Post,
 
 ##### Това пък е резултат от неуспешен тест
 
-![Image-Absolute](assets/failed_test.png)
+![Image-Absolute](assets/exunit.png)
 
 ---
 ### Защо Elixir?
