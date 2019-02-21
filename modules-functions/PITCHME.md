@@ -22,6 +22,7 @@
 * [Elixir in Action](https://www.manning.com/books/elixir-in-action)
   - търсете втория едишън
 * [The little elixir and otp guidebook](https://www.manning.com/books/the-little-elixir-and-otp-guidebook)
+[Learn you some Erlang for great good (free)](https://learnyousomeerlang.com)
 
 
 ---
