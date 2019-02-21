@@ -514,6 +514,7 @@ iex(14)> doubler.(1)
 * mix format
 * mix help
   - потърси помощ
+* iex --erl "-kernel shell_history enabled" -S mix
 
 ---
 
