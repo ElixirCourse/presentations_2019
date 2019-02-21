@@ -269,10 +269,10 @@ defmodule Deep.Outer do
 
   defmodule Inner do
     # Трябва Deep.Outer.outer/1 да го реферираме директно,
-    # няма да се компилира
+    # ще гръмне 
     def inner_outer, do: Outer.outer()
 
-    # Също няма да се компилира
+    # Няма да се компилира
     def inner_outer2, do: outer()
   end
 end
