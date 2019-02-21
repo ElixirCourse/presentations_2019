@@ -426,6 +426,7 @@ iex(7)> fn a, b -> a + b end.(3, 4)
 ### С точка!
 
 * Преди Борката да изкрещи "BAD LANGUAGE DESIGN!"
+* Повече информация [тук](https://stackoverflow.com/questions/18011784/why-are-there-two-kinds-of-functions-in-elixir)
 * Нещо си нещо си lisp-2 език(Note to author: може и да го обясниш)
 
 ---
