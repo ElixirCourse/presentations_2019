@@ -584,7 +584,7 @@ defmodule HR do
   def work_experience(_), do: :not_experienced
 
   def knows_elixir?([]), do: false
-  def knows_elixir?([:elixir, _]), do: true
+  def knows_elixir?([:elixir | _]), do: true
   def knows_elixir?([_ | rest]), do: knows_elixir?(rest)
 
   def read_cv(file_path), do: File.read(file_path)
