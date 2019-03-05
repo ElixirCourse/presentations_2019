@@ -100,7 +100,7 @@ binary_part(<< 83, 79, 83, 23, 21, 12 >>, 1, 3)
 ```
 
 ---
-Функцията `Kernel.binary_part/3` вътрешно ползва `:erlang.binary_part/3`, която е *NIF*, позволен в guard-ове:
+Функцията `Kernel.binary_part/3` вътрешно ползва `:erlang.binary_part/3`, която е *BIF*, позволен в guard-ове:
 
 ```elixir
 case <<17, 13, 14, 15>> do
