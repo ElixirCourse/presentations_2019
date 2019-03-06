@@ -25,6 +25,17 @@
 
 ---
 
+### Process.sleep/1
+
+Използване
+
+```elixir
+iex> Process.sleep(10_000)
+# Спим за 10 секунди
+```
+
+---
+
 ### Kernel.apply/2
 
 Използва се така:
