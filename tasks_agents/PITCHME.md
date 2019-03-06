@@ -41,11 +41,18 @@ apply(func, [3]) # => Грешка
 ### Kernel.apply/3
 
 * Същото като Kernel.apply/2, но за именувани функции |
-* Използва mfa (module, function, arguments) |
+* Използва се така: apply(module, function, arguments) |
+* module е атом |
+* function е атом |
+* arguments е списък с аргументи които да бъдат подадени на функцията |
+* Често на това ще казваме MFA |
+
 
 ---
 
 ### Kernel.apply/3
+
+Използване
 
 ```elixir
 defmodule A do
