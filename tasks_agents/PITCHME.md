@@ -145,14 +145,12 @@ apply(A, :mult, [3]) # => Грешка
 ---
 
 ```elixir
-iex> task = Task.async(fn -> 1 + 1 end)
-%Task{...}
+task = Task.async(fn -> 1 + 1 end)
 
 # Друга логика може да се изпълни тук...
-# Когато сме готови:
 
-iex> Task.await(task)
-2
+# Когато сме готови:
+Task.await(task) #=> 2
 ```
 
 ---
@@ -167,14 +165,14 @@ iex> Task.await(task)
 ### async и await
 
 ```elixir
-iex> task = Task.async(fn ->
+task = Task.async(fn ->
   Process.sleep(10_000) # Симулираме дълга задача
   1 + 2
 end)
-%Task{...}
-iex> Task.await(task)
-** (exit) exited in: Task.await(%Task{...}, 5000)
-     ** (EXIT) time out
+
+Task.await(task)
+#=> ** (exit) exited in: Task.await(%Task{...}, 5000)
+#=>     ** (EXIT) time out
 ```
 ---
 
@@ -193,13 +191,13 @@ iex> Task.await(task)
 ### await и timeout
 
 ```elixir
-iex> task = Task.async(fn ->
+task = Task.async(fn ->
   Process.sleep(10_000) # Симулираме дълга задача
   1 + 2
 end)
-%Task{...}
-iex> Task.await(task, 11_000) # Ще почакаме около 10 секунди
-3
+
+# Ще почакаме около 10 секунди
+Task.await(task, 11_000) #=> 3
 ```
 
 ---
@@ -209,13 +207,12 @@ iex> Task.await(task, 11_000) # Ще почакаме около 10 секунд
 ---
 
 ```elixir
-iex> task = Task.async(fn -> 2 + 2 end)
-%Task{...}
-iex> Task.await(task)
-4
-iex> Task.await(task)
-** (exit) exited in: Task.await(%Task{...}, 5000)
-    ** (EXIT) time out
+task = Task.async(fn -> 2 + 2 end)
+
+Task.await(task) #=> 4
+Task.await(task)
+#=> ** (exit) exited in: Task.await(%Task{...}, 5000)
+#=>     ** (EXIT) time out
 ```
 
 ---
@@ -230,10 +227,8 @@ iex> Task.await(task)
 ### MFA
 
 ```elixir
-iex> task = Task.async(Kernel, :+, [2, 3])
-%Task{...}
-iex> Task.await(task)
-5
+task = Task.async(Kernel, :+, [2, 3])
+Task.await(task) #=> 5
 ```
 
 ---
@@ -264,20 +259,17 @@ end
   * В противен случай връща {:ok, result}
 ---
 ```elixir
-iex> task = Task.async(fn ->
+task = Task.async(fn ->
   Process.sleep(5_000)
   3 + 3
 end)
-%Task{...}
-iex> Task.yield(task, 1_000)
-nil
-iex> Task.yield(task, 2_000)
-nil
-iex> Task.yield(task, 3_000)
-{:ok, 6}
+Task.yield(task, 1_000) #=> nil
+Task.yield(task, 2_000) #=> nil
+Task.yield(task, 3_000) #=> {:ok, 6}
 ```
 
 ---
+
 * Изглежда, че *poll*-ваме задачата за резултат, но не е така.
 * Процесите в Elixir комуникират помежду си чрез размяна на съобщения, което прилича на изпращане на *push нотификации*.
 * Когато задачата си свърши работата, резултатът ще бъде **изпратен** до текущия процес.
