@@ -5,4 +5,4 @@
 2. [Типове и патърнмачинг](https://gitpitch.com/ElixirCourse/presentations_2019?p=pattern_matching_and_basics#/)
 3. [Списъци и реяници](https://gitpitch.com/ElixirCourse/presentations_2019?p=modules-functions#/)
 4. [Байнърита и стрингове](https://gitpitch.com/ElixirCourse/presentations_2019?p=binaries_and_strings#/)
-5. [Задачи и aгенти](https://gitpitch.com/ElixirCourse/presentations_2019/task_and_agents?p=tasks_agents#/)
+5. [Задачи и aгенти](https://gitpitch.com/ElixirCourse/presentations_2019?p=tasks_agents#/)
