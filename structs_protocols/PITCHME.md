@@ -449,7 +449,16 @@ defimpl JSON, for: Map do
   end
 end
 ```
-
+@[2]
+@[3-9]
+@[4-5]
+@[6-8]
+@[11-13,15]
+@[11-13]
+@[17-20]
+@[11-13,15]
+@[15]
+@[22-25]
 ---
 ```elixir
 iex> data = %{
@@ -566,13 +575,14 @@ iex> Protocol.extract_protocols([path])
 ---
 #### Протоколи идващи с езика
 
-* `Collectable` - това е протоколът, използван от `Enum.into`. |
-* `Inspect` - използва се за _pretty printing_. |
-* `String.Chars` - `Kernel.to_string/1` го използва. |
-* `List.Chars` - `Kernel.to_charlist/1` го използва. |
-* `Enumerable` - `Enum` функциите очакват имплементации. |
+* [`Collectable`](https://hexdocs.pm/elixir/Collectable.html) - това е протоколът, използван от `Enum.into`.
+* [`Inspect`](https://hexdocs.pm/elixir/Inspect.html) - използва се за _pretty printing_.
+* [`String.Chars`](https://hexdocs.pm/elixir/String.Chars.html) - `Kernel.to_string/1` го използва.
+* [`List.Chars`](https://hexdocs.pm/elixir/List.Chars.html) - `Kernel.to_charlist/1` го използва.
+* [`Enumerable`](https://hexdocs.pm/elixir/Enumerable.html) - `Enum` функциите очакват имплементации.
 
 ---
+
 ```elixir
 iex>Protocol.extract_impls(Enumerable, [path])
 [
@@ -598,6 +608,8 @@ defimpl Enumerable, for: BitString do
     {next, rest} = String.next_grapheme(str)
     reduce(rest, fun.(next, acc), fun)
   end
+
+  def slice(enumerable), do: {:error, __MODULE__}
 end
 ```
 
