@@ -20,16 +20,23 @@
 ---
 
 1. Динамичното типизиране помага с hot code reloading
+
+---
+
 Или имаш статично типизиране и интерфейсите на модулите не се променят при hot code reload.
-Или функциите не проверяват с какви данни са се извикали, понеже
-компилаторът го е проверил, което е много "unsafe", за разлика от
-другите опции. Дистрибутиран erlang прави това още по-трудно.
+Или функциите не проверяват с какви данни са извикани, понеже
+компилаторът го е проверил, което е много по-"unsafe", за разлика от
+другите опции.
+Дистрибутиран erlang прави това още по-трудно.
 
 
 ---
 
 2. Динамичното типизиране помага с изпращане на всякакви съобщения.
-Опит за статична такава [Links](http://links-lang.org).
+
+---
+
+Опит за статична система за изпращане на съобщения в езика [Links](http://links-lang.org).
 Erlang-ският receive не може да бъде направен в Links, понеже всеки
 receive ще трябва пълно да изразходва всички pattern-и за съобщения,
 за да минава type checker-a.
@@ -37,6 +44,9 @@ receive ще трябва пълно да изразходва всички patt
 ---
 
 3. Изпращането на съобщения допълнително ще затрудни типовата система.
+
+---
+
 Всяка функция ще трябва да има допълнително информация за какви
 съобщения приема.
 Тоест вместо `A -> B`, нещо като `A ~ C -> B`, където `C` са видовете
@@ -45,6 +55,9 @@ receive ще трябва пълно да изразходва всички patt
 ---
 
 4. Друг проблем би бил "смъртта", или терминирането на процес.
+
+---
+
 Наблюдаването на процес би изисквало да може да приема точно
 `{:EXIT, ...}` съобщение.
 С други думи, ако всеки процес има типове `(m, d)`, където
@@ -52,10 +65,11 @@ receive ще трябва пълно да изразходва всички patt
 един процес, тогава само процес `(a, _)` би наблюдавал процес
 `(_, a)`, което е доста лимитиращо.
 
-
 ---
 
-## Story time с Никола
+#### Story time
+
+---
 
 Имало е много опити през годинитe за типизиране на Erlang.
 Един от тях е бил през 1997 воден от Simon Marlow(lead GHC dev) и
@@ -63,21 +77,26 @@ Philip Wadler(haskell design, заслуги за теорията зад мон
 
 ---
 
-## Резултатът бил този [paper](http://homepages.inf.ed.ac.uk/wadler/papers/erlang/erlang.pdf)
+##### Резултатът бил този [научен труд](http://homepages.inf.ed.ac.uk/wadler/papers/erlang/erlang.pdf)
 
 ---
 
-## Кратък коментар от Joe Armstrong по този труд
-
-
----
-
-@quote[One day Phil phoned me up and announced that a) Erlang needed a type system, b) he had written a small prototype of a type system and c) he had a one year’s sabbatical and was going to write a type system for Erlang and “were we interested?” Answer —“Yes.”]
+##### Кратък коментар от Joe Armstrong по този труд
 
 ---
 
+@quote[
+One day Phil phoned me up and announced that
+a) Erlang needed a type system,
+b) he had written a small prototype of a type system and
+c) he had a one year’s sabbatical and was going to write a type system for Erlang and “were we interested?”
+Answer —“Yes.”
+]
 
-@quote[Phil Wadler and Simon Marlow worked on a type system for over a year and the results were published in [20]. The results of the project were somewhat disappointing. To start with, only a subset of the language was type-checkable, the major omission being the lack of process types and of type checking inter-process messages.]
+---
+
+
+@quote[Phil Wadler and Simon Marlow worked on a type system for over a year and the results were published in 20. The results of the project were somewhat disappointing. To start with, only a subset of the language was type-checkable, the major omission being the lack of process types and of type checking inter-process messages.]
 
 ---
 
@@ -98,28 +117,31 @@ Philip Wadler(haskell design, заслуги за теорията зад мон
 
 ---
 
-С трудът зад HiPE се заражда инструментът наречен dialyzer, който се
+С трудът зад *HiPE* се заражда инструментът наречен *dialyzer*, който се
 използва и до ден днешен. Той си идва със собствен type inference механизъм,
-наречен success typing.
+наречен *success typing*.
 
 ---
-#### Как работи?
+### Как работи?
 
 ---
-Построява едни таблици, които съдържат информация за инферираните
-типове на абсолютно всички функции.
-(наричани PLT - persistent lookup table)
+Построява таблици, които съдържат информация с инферирани
+типове на абсолютно всички функции в системата.
+
+---
+
+Още наричани PLT - persistent lookup table
 
 ---?image=assets/dialyzer.png&size=auto 70%
 
 ---
 
-Добрата страна на PLT-то е, че се билдва инкрементално.
-PS: Как ще се реши този проблем?
+- Добрата страна на PLT-то е, че се билдва инкрементално.
+- PS: Как ще се реши този проблем?
 
 ---
 
-### Накратко за "Success Typing"
+### "Success Typing 101"
 
 ---
 
@@ -153,13 +175,13 @@ Dyalyzer Demo
 
 ---
 
-Ето [тук](https://hexdocs.pm/elixir/typespecs.html) има пълен списък.
-Be chill, че няма типови класове с контруктори и други шитове.
-(Поне вече има рекурсивни типове)
+- Ето [тук](https://hexdocs.pm/elixir/typespecs.html) има пълен списък.
+- Be chill, че няма типови класове с контруктори и други шитове.
+- (Поне вече има рекурсивни типове)
 
 ---
 
-Даже видях хора, които ги ползват на домашните!
+- Даже видях хора, които ги ползват на домашните!
 - :bow:
 
 ---
@@ -179,7 +201,10 @@ Be chill, че няма типови класове с контруктори и
 
 ##### Начин да разделим абстракцията от имплементацията.
 
----?image=assets/what.gif&size=auto 70%
+---
+
+Wait what?
+
 
 ---
 
@@ -203,8 +228,8 @@ Be chill, че няма типови класове с контруктори и
 
 ---
 
-Да кажем, че бихме искали да напишем поведение за парсване на JSON/MsgPack
-(Това беше проект миналата година(сълза, за хората, които трябваше да го направят))
+- Да кажем, че бихме искали да напишем поведение за парсване на JSON/MsgPack
+- (Това беше проект миналата година(сълза, за хората, които трябваше да го направят))
 
 ---
 
