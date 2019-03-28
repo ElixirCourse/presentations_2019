@@ -87,16 +87,15 @@ receive ще трябва пълно да изразходва всички patt
 
 ---
 
-- One day Phil phoned me up and announced that
-- a) Erlang needed a type system,
-- b) he had written a small prototype of a type system and
-- c) he had a one year’s sabbatical and was going to write a type system for Erlang and “were we interested?”
-- Answer —“Yes.”
+```
+One day Phil phoned me up and announced that a) Erlang needed a type system, b) he had written a small prototype of a type system and c) he had a one year’s sabbatical and was going to write a type system for Erlang and “were we interested?” Answer —“Yes.”
+```
 
 ---
 
-
-Phil Wadler and Simon Marlow worked on a type system for over a year and the results were published in 20. The results of the project were somewhat disappointing. To start with, only a subset of the language was type-checkable, the major omission being the lack of process types and of type checking inter-process messages.
+```
+Phil Wadler and Simon Marlow worked on a type system for over a year and the results were published in [20]. The results of the project were somewhat disappointing. To start with, only a subset of the language was type-checkable, the major omission being the lack of process types and of type checking inter-process messages.
+```
 
 ---
 
