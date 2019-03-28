@@ -150,7 +150,7 @@ process types and of type checking inter-process messages.
 
 ---
 
-### "Success Typing 101"
+### Success Typing 101
 
 ---
 
