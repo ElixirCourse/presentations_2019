@@ -14,12 +14,14 @@
 3. Поведения
 
 ---
-## Защо erlang не е статично типизиран?
+### Защо erlang не е статично типизиран?
+
+---
 Вие как мислите?
 
 ---
 
-1. Динамичното типизиране помага с hot code reloading
+Динамичното типизиране помага с hot code reloading
 
 ---
 
@@ -32,7 +34,7 @@
 
 ---
 
-2. Динамичното типизиране помага с изпращане на всякакви съобщения.
+Динамичното типизиране помага с изпращане на всякакви съобщения.
 
 ---
 
@@ -43,7 +45,7 @@ receive ще трябва пълно да изразходва всички patt
 
 ---
 
-3. Изпращането на съобщения допълнително ще затрудни типовата система.
+Изпращането на съобщения допълнително ще затрудни типовата система.
 
 ---
 
@@ -54,7 +56,7 @@ receive ще трябва пълно да изразходва всички patt
 
 ---
 
-4. Друг проблем би бил "смъртта", или терминирането на процес.
+Друг проблем би бил "смъртта", или терминирането на процес.
 
 ---
 
@@ -71,9 +73,9 @@ receive ще трябва пълно да изразходва всички patt
 
 ---
 
-Имало е много опити през годинитe за типизиране на Erlang.
-Един от тях е бил през 1997 воден от Simon Marlow(lead GHC dev) и
-Philip Wadler(haskell design, заслуги за теорията зад монадите).
+- Имало е много опити през годинитe за типизиране на Erlang.
+- Един от тях е бил през 1997 воден от Simon Marlow(lead GHC dev) и
+- Philip Wadler(haskell design, заслуги за теорията зад монадите).
 
 ---
 
@@ -85,18 +87,16 @@ Philip Wadler(haskell design, заслуги за теорията зад мон
 
 ---
 
-@quote[
-One day Phil phoned me up and announced that
-a) Erlang needed a type system,
-b) he had written a small prototype of a type system and
-c) he had a one year’s sabbatical and was going to write a type system for Erlang and “were we interested?”
-Answer —“Yes.”
-]
+- One day Phil phoned me up and announced that
+- a) Erlang needed a type system,
+- b) he had written a small prototype of a type system and
+- c) he had a one year’s sabbatical and was going to write a type system for Erlang and “were we interested?”
+- Answer —“Yes.”
 
 ---
 
 
-@quote[Phil Wadler and Simon Marlow worked on a type system for over a year and the results were published in 20. The results of the project were somewhat disappointing. To start with, only a subset of the language was type-checkable, the major omission being the lack of process types and of type checking inter-process messages.]
+Phil Wadler and Simon Marlow worked on a type system for over a year and the results were published in 20. The results of the project were somewhat disappointing. To start with, only a subset of the language was type-checkable, the major omission being the lack of process types and of type checking inter-process messages.
 
 ---
 
@@ -167,7 +167,7 @@ Dyalyzer Demo
 
 ---
 
-## Type specifications, or typespecs for short.
+### Type specifications, or typespecs for short.
 
 ---
 
@@ -181,8 +181,7 @@ Dyalyzer Demo
 
 ---
 
-- Даже видях хора, които ги ползват на домашните!
-- :bow:
+- Даже видях хора, които ги ползват на домашните! :bow:
 
 ---
 
@@ -321,9 +320,7 @@ Parser.encode!(JSON, term)
 
 ---
 
-@quote[Protocol is type/data based polymorphism. When I call `Enum.each(foo, ...)`, the concrete enumeration is determined from the type of foo.
-
-Behaviour is a typeless plug-in mechanism. When I call `GenServer.start(MyModule)`, I explicitly pass `MyModule` as a plug-in, and the generic code from GenServer will call into this module when needed.](Sas̄a Jurić)
+Коментар от [авторът](https://stackoverflow.com/questions/26215206/difference-between-protocol-behaviour-in-elixir) на Elixir in Action
 
 ---
 
