@@ -96,8 +96,17 @@ Philip Wadler(haskell design, заслуги за теорията зад мон
 ---
 ## Dialyzer
 
+
 ---
 
+С трудът зад HiPE се заражда инструментът наречен dialyzer, който се
+използва и до ден днешен. Той си идва със собствен type inference механизъм,
+наречен success typing.
+
+---
+#### Как работи?
+
+---
 Построява едни таблици, които съдържат информация за инферираните
 типове на абсолютно всички функции.
 (наричани PLT - persistent lookup table)
@@ -107,12 +116,7 @@ Philip Wadler(haskell design, заслуги за теорията зад мон
 ---
 
 Добрата страна на PLT-то е, че се билдва инкрементално.
-
----
-
-С трудът зад HiPE се заражда инструментът наречен dialyzer, който се
-използва и до ден днешен. Той си идва със собствен type inference механизъм,
-наречен success typing.
+PS: Как ще се реши този проблем?
 
 ---
 
@@ -128,13 +132,21 @@ Success typing:
 ---
 
 #### Класическият пример с `and`
-- ghci vs dialyzer
+- ghci vs dialyzer demo
 - Hindley-Milner type inference vs success typing
+
+---
+
+Dyalyzer Demo
 
 ---
 
 Може би не звучи много смислено, но повече зад имплементацията и
 решенията може да намерите ето [тук.](http://www.it.uu.se/research/group/hipe/papers/succ_types.pdf)
+
+---
+
+## Type specifications, or typespecs for short.
 
 ---
 
@@ -149,7 +161,7 @@ Be chill, че няма типови класове с контруктори и
 ---
 
 Даже видях хора, които ги ползват на домашните!
-:bow:
+- :bow:
 
 ---
 
