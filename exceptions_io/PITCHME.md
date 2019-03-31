@@ -225,9 +225,7 @@ IO.gets("Кажи нещо!\n")
 ```
 
 ---
-<p>
-IO Server Time
-</p>
+* IO Server Time
 ![Image-Absolute](assets/its-showtime.jpg)
 
 ---
