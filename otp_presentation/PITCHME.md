@@ -36,10 +36,40 @@
 * И много други... |
 
 ---
+
+<!-- .slide: style="text-align: left;"> -->
+В книгата **Designing for Scalability with Erlang/OTP** авторите *Francesco Cesarini* и *Steve Vinoski* дефинират OTP като три ключови компонента, които взаимодействат помежду си:
+
+1. Самият Erlang
+2. Множество от библиотеки и виртуалната машина
+3. Множество от **system design principles** (принципи за дизайн на системи <sub><span style="color: #e0ebeb">некадърен превод на автора</span></sub>)
+
+---
+
+### OTP Compliant Proccess
+<!-- .slide: style="text-align: left;"> -->
+След OTP лекциите е силно препоръчително да спрете да спрете създавате процеси чрез **spawn**. Също така всички ваши процеси трябва да са OTP съвместими. Това ще им позволява:
+1. Да бъдат използвани в супервайзор дърво
+2. Грешките в тези процеси да бъдат записвани с повече детайли
+
+---
+
+<!-- .slide: style="text-align: left;"> -->
+Но няма често да ви се налага ръчно да имплементирате OTP-compliant частта.
+
+Erlang/OTP идва с абстракции, които имплементират OTP-съвместими процеси.
+
+---
 Ние ще разгледаме три абстракции от OTP:
 * GenServer
 * Supervisor
 * Application
+
+---
+Има и още:
+* gen_statem - State Machines
+* gen_event - Event handling
+* GenStage - Producer/Consumer pipeline
 
 ---
 Ще разгледаме и базата ETS
@@ -49,7 +79,11 @@
 
 ---
 ## GenServer
-![Image-Absolute](assets/generic.jpg)
+![](assets/common-pattern.png)
+
+---
+
+## Demo + [Link](http://learnyousomeerlang.com/what-is-otp#its-the-open-telecom-platform)
 
 ---
 * Имплементирахме си наша версия, но сега ще разгледаме OTP версията
@@ -171,10 +205,11 @@ GenServer.call/3
 * Нужно е само "from" да е точно тази наредена двойка, която е получена в handle_call.
 
 ---
+
 Има три основни причини да върнем noreply от handle_call:
-1. Защото сме отговорили с GenServer.reply/2 преди да върнем резултат. |
-2. Защото ще отговори след като handle_call е свършила изпълнението си. |
-3. Защото някой друг процес трябва да отговори. |
+1. Защото сме отговорили с GenServer.reply/2 преди да върнем резултат.
+2. Защото ще отговори след като handle_call е свършила изпълнението си.
+3. Защото някой друг процес трябва да отговори.
 
 ---
 * Връщаме :stop резултат, когато искаме да прекратим изпълнението на GenServer процеса.
@@ -194,8 +229,8 @@ GenServer.call/3
 
 ---
 * handle_cast функциите се изпълняват при асинхронна комуникация.
-* Това става чрез извикването на GenServer.cast(pid|name, request), която винаги връща :ok не и
-чака за отговор.
+* Това става чрез извикването на GenServer.cast(pid|name, request), която винаги връща :ok и
+не чака за отговор.
 
 ---
 * handle_cast най-често се използват за промяна на състоянието.
@@ -255,6 +290,48 @@ GenServer.call/3
 * Ще се извика, ако процесът извика Kernel.exit/1 |
 * Няма да се извика, ако процесът е убит с ':brutal_kill' |
 * Не е гарантирано да се извика, затова чистене е по-добре да се прави от друг, свързан или наблюдаващ процес |
+
+---
+#### code_change
+![Image-Absolute](assets/code_change.png)
+
+---
+
+##### [Как работи](https://stackoverflow.com/questions/36885146/how-code-change-function-work-in-gen-server-module)
+
+---
+```elixir
+@spec code_change(old_vsn, state :: term(), extra :: term()) ::
+  {:ok, new_state :: term()} | {:error, reason :: term()}
+  when old_vsn: term() | {:down, term()}
+```
+
+---
+
+* 'old_vsn' е предишната версия на модула дефинирана от модулния атрибут '@vsn' |
+* 'state' е сегашното състояние на GenServer-a |
+* 'extra' са всякакви допълнителни данни нужни за миграцията |
+
+---
+#### format_status
+![Image-Absolute](assets/format_status.png)
+
+---
+```
+@spec format_status(reason, pdict_and_state :: list()) :: term()
+      when reason: :normal | :terminate
+```
+
+---
+
+* Използва се когато искаме да видим форматирана версия на състоянието |
+* Например бихме го използвали, ако искаме да покажем съкратено състояние на данните(Ако имаме хиляди котки в магазина) |
+
+---
+
+* 'reason' - причина с която искаме да извикаме функцията - ':normal | :terminate' |
+* Когато извикаме ':sys.get_status/{1, 2}', тогава причината e ':normal' |
+* Когато получим грешка и трябва да лог-нем грешка, тогава причината е ':terminate' |
 
 ---
 За дебъг, support и тестване : :sys
