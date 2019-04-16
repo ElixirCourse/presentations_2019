@@ -38,17 +38,17 @@
 ---
 
 <!-- .slide: style="text-align: left;"> -->
-В книгата **Designing for Scalability with Erlang/OTP** авторите *Francesco Cesarini* и *Steve Vinoski* дефинират OTP като три ключови компонента, които взаимодействат помежду си:
+В книгата **Designing for Scalability with Erlang/OTP** авторите *Francesco Cesarini* и *Steve Vinoski* дефинират OTP като три ключови компонента:
 
 1. Самият Erlang
 2. Множество от библиотеки и виртуалната машина
-3. Множество от **system design principles** (принципи за дизайн на системи <sub><span style="color: #e0ebeb">некадърен превод на автора</span></sub>)
+3. Множество от **system design principles**
 
 ---
 
 ### OTP Compliant Proccess
 <!-- .slide: style="text-align: left;"> -->
-След OTP лекциите е силно препоръчително да спрете да спрете създавате процеси чрез **spawn**. Също така всички ваши процеси трябва да са OTP съвместими. Това ще им позволява:
+След OTP лекциите е силно препоръчително да спрете да спрете създавате процеси чрез **spawn**. Също така всички ваши процеси трябва да са [OTP съвместими](http://erlang.org/doc/design_principles/spec_proc.html). Това ще им позволява:
 1. Да бъдат използвани в супервайзор дърво
 2. Грешките в тези процеси да бъдат записвани с повече детайли
 
@@ -69,7 +69,7 @@ Erlang/OTP идва с абстракции, които имплементира
 Има и още:
 * gen_statem - State Machines
 * gen_event - Event handling
-* GenStage - Producer/Consumer pipeline
+* GenStage - Producer/Consumer pipeline(не е част от OTP, но е compliant)
 
 ---
 Ще разгледаме и базата ETS
