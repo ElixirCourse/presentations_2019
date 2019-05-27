@@ -2,6 +2,64 @@
 ## Дистрибутиран Elixir
 
 ---
+### Да си припомним
+![Image-Absolute](assets/chemmy.jpeg)
+
+---
+Нужни знания досега:
+
+1. Какво е BEAM Node?
+2. Какво е OTP Application?
+3. Каквое Supersvision дърво?
+
+---
+Как си пускаме BEAM node?
+
+```bash
+iex -S mix
+```
+
+---
+Ако не ни е нужен shell?
+
+```bash
+mix run --no-halt
+```
+
+```bash
+elixir -S mix run --no-halt
+```
+
+---
+И пак mix, mix, mix!
+
+```bash
+elixir --detached -S mix run --no-halt
+```
+
+---
+![Image-Absolute](assets/mixmixmix.jpg)
+
+---
+#### MIX
+* Mix ни компилира кода и го слага на правилно място. |
+* Mix ни генерира app file и ни оправя зависимостите. |
+* Mix знае пътищата, които са ни нужни и как да пуска проекта ни. |
+
+---
+#### RELEASE
+* Има как да правим release, който да се пуска в production и не ползва Mix. |
+* OTP Release е нещо, което или може да се пусне чрез инсталиран Erlang (не трябва Elixir) и даже без Erlang. |
+* В Elixir, ние си имаме Distilery за да ни построи тези OTP release-и. |
+
+---
+![Image-Absolute](assets/distil.png)
+
+---
+![Image-Absolute](assets/offfftopic.jpg)
+
+
+---
 ![Image-Absolute](assets/title.jpg)
 
 ---
@@ -20,8 +78,7 @@
 * Elixir ни дава добри инструменти за постигане на това. |
 
 ---
-* Виртуалните машини на Elang/Elixir наричаме ноудове (nodes).
-* Един node е една виртуална машина. |
+* Един node е една виртуална машина.
 * Те може да са отворени за комуникация с други ноудове или не. |
 
 ---
@@ -157,6 +214,11 @@ iex --sname andi --erl \
 ```
 
 ---
+```elixir
+:net_adm.names()
+```
+
+---
 ## PID
 ![Image-Absolute](assets/pid.jpg)
 
@@ -194,6 +256,18 @@ Node.spawn(
 ```elixir
 binary_pid = :erlang.term_to_binary(pid)
 ```
+
+---
+### Свързване с вървящ node
+
+```bash
+elixir --detached --name bot@127.0.0.1 -S mix run --no-halt
+iex --name botor@127.0.0.1 --remsh bot@127.0.0.1 --hidden
+```
+
+---
+### Отклонение от темата #2
+![Image-Absolute](assets/Screenshot_20190528_000840.png)
 
 ---
 ## Дистрибутирани програми - проблемите
