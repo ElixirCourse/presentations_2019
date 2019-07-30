@@ -17,3 +17,5 @@
 
 - [Презентация](https://gitpitch.com/nikolads/nif_presentation#/)
 - [Примери](https://github.com/nikolads/nif_presentation/tree/master/examples)
+
+> лектор Никола Стоянов
