@@ -10,3 +10,10 @@
 7. [Процеси vol.2](https://gitpitch.com/ElixirCourse/presentations_2019?p=process_internals_presentation#/)
 8. [Наблюдаване на процеси и състояние](https://gitpitch.com/ElixirCourse/presentations_2019?p=process_links_and_state_presentation#/)
 9. [Тип спецификации и поведения](https://gitpitch.com/ElixirCourse/presentations_2019?p=type_specifications_and_behaviours#/)
+
+# Презентации от наши гостлектори
+
+### Интеграция с други езици (NIFs)
+
+- [Презентация](https://gitpitch.com/nikolads/nif_presentation#/)
+- [Примери](https://github.com/nikolads/nif_presentation/tree/master/examples)
